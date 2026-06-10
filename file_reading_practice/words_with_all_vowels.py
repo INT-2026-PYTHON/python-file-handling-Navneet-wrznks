@@ -40,3 +40,18 @@ Explanation:
 =================================================
 
 """
+with open("file_reading_practice/sowpods.txt") as file:
+    text = file.read()
+    words = text.splitlines()
+    vowels = set('aeiou')
+    words_with_all_vowels = []
+    
+    for word in words:
+        lower_word = word.lower()
+        if all(vowel in lower_word for vowel in vowels):
+            words_with_all_vowels.append(word)
+    print("Words with all vowels:")
+    for w in words_with_all_vowels:
+        print(w)
+    print(f"Total words with all vowels: {len(words_with_all_vowels)}")
+
