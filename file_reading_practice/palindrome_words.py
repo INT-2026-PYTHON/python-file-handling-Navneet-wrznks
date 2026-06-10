@@ -51,3 +51,16 @@ Explanation:
 =================================================
 
 """
+def palindrome(word):
+    return word == word[::-1]
+
+with open("file_reading_practice/sowpods.txt") as file:
+    text = file.read()
+    words = text.splitlines()
+    palindromes = []
+    for word in words:
+        if palindrome(word):
+            palindromes.append(word)
+            print(word)
+    print(f"Total palindromes: {len(palindromes)}") 
+    
